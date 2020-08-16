@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+:root {
+  --background-colour:rgb(30, 43, 100);
+  --element-background-colour:rgb(11, 113, 230);
+  --font-colour: rgb(246, 251, 255)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "open-sans";
+  src: url(OpenSans-Regular.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  font-family: "open-sans";
+  background-color: var(--background-colour);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.BugList{
+  color:var(--font-colour);
+  margin: 0 4vw;
+   width: auto;
+  display:grid;
+   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+   grid-template-rows: auto;
+   gap:2rem 3rem;
+   margin-bottom:4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.BugList > h1 {
+  grid-column: 1 / -1;
+  margin:0.2rem 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.BugList > .Bug {
+  padding:1rem 1rem 1.2rem;
+  display:grid;
+  grid-template-rows: 2rem 2fr 1.5rem 3rem;
+  gap:1rem;
+  background-color: var(--element-background-colour);
+  border-radius:0.5rem;
+}
+
+.BugList > .Bug > h3, .BugList > .Bug > p {
+  margin:0;  word-wrap: break-word;
+
+}
+
+.BugList > .Bug > span > button {
+background-color: red;
+border:none;
+border-radius: 5px;
+color:white;
+width:2rem;
+height:2rem;
+}
+
+.BugList > .Bug > .Options {
+  display:grid;
+  grid-template-columns: 9ch 1fr 8ch;
+}
+
+.BugList > .Bug > .Options > span {
+cursor:pointer;
+}
+
+.BugList > .Bug > .Options > button {
+width:100%;
+background-color: transparent;
+padding:0;
+height:100%;
+font-size:16px;
+cursor:pointer;
+}
+
+.BugList > .Bug > .Options p {
+margin:0;
+line-height: 1rem;
+cursor: pointer;
+display:inline;
+font-size:16px;
+}
+
+.BugList > .Bug > .Options > i {
+  cursor:pointer;
+  display:inline;
+
+}
+
+.BugList > .Bug > input,.BugList > .Bug > select,.BugList > .Bug > textarea  {
+  border-radius:0.5rem;
+  border:none;
+  resize: vertical;
+  padding-left:0.5rem;
+
+}
+.BugList > .Bug > textarea {
+    padding:0.5rem;
+    font-size:1.2rem;
+}
+
+.BugList > .Bug > #title {
+  font-size:1.17em;
+  height:1.17em;
+  padding:0.3rem;
+  padding-left:0.5rem;
+}
+.BugList > .Bug > select:focus{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
